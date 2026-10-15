@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>revisar-codigo · Skill para Gemini</title>
+  <meta name="description" content="Skill propia para Gemini que revisa código como un ingeniero de software senior: bugs, seguridad, rendimiento y buenas prácticas.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230b1530'/><path d='M11 10l-5 6 5 6M21 10l5 6-5 6' stroke='%2334d399' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Barra de navegación ===== -->
+  <header class="nav">
+    <div class="contenedor nav__inner">
+      <a href="#inicio" class="logo">
+        <span class="logo__icono">&lt;/&gt;</span>
+        <span>revisar-codigo</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="nav__links" id="navLinks">
+        <a href="#que-es">¿Qué es?</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#demo">Demo</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#recursos">Infografía y video</a>
+        <a href="#instalar" class="btn btn--chico">Instalar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="inicio">
+      <div class="contenedor hero__grid">
+        <div>
+          <p class="etiqueta">Skill para Gemini · Ingeniería Informática</p>
+          <h1>Tu revisor de código <span class="resaltado">con IA</span></h1>
+          <p class="hero__texto">
+            <strong>revisar-codigo</strong> es una Skill propia que convierte a Gemini en un ingeniero de software senior:
+            encuentra bugs, fallas de seguridad y malas prácticas, les asigna una severidad y te explica cómo corregirlas.
+          </p>
+          <div class="hero__botones">
+            <a href="#instalar" class="btn">Instalar la Skill</a>
+            <a href="https://github.com/nicolasravem-design/skill-revisor-codigo-gemini" class="btn btn--borde" target="_blank" rel="noopener">Ver en GitHub</a>
+          </div>
+          <ul class="hero__datos">
+            <li><strong data-contador="22">0</strong>/24 errores detectados</li>
+            <li><strong data-contador="10">0</strong>/10 respuestas con formato</li>
+            <li><strong data-contador="0">0</strong> falsos positivos</li>
+          </ul>
+        </div>
+
+        <!-- Ventana de ejemplo (estilo editor) -->
+        <div class="ventana" aria-hidden="true">
+          <div class="ventana__barra"><span></span><span></span><span></span><p>caso01_promedio.py</p></div>
+<pre class="ventana__codigo"><code><span class="ln">1</span> <span class="kw">def</span> <span class="fn">calcular_promedio</span>(notas):
+<span class="ln">2</span>     suma = <span class="num">0</span>
+<span class="ln err">3</span>     <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="fn">len</span>(notas)):
+<span class="ln">4</span>         suma += notas[i]
+<span class="ln err">5</span>     <span class="kw">return</span> suma / <span class="fn">len</span>(notas)</code></pre>
+          <div class="ventana__resultado">
+            <p><span class="sev sev--critico">Crítico</span> L3 · El bucle se salta la primera nota</p>
+            <p><span class="sev sev--critico">Crítico</span> L5 · ZeroDivisionError con lista vacía</p>
+            <p><span class="sev sev--bajo">Bajo</span> L3-4 · Usar <code>sum(notas)</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Qué es una Skill ===== -->
+    <section class="seccion" id="que-es">
+      <div class="contenedor">
+        <h2>¿Qué es una Skill en Gemini?</h2>
+        <p class="seccion__intro">
+          Una Skill (en español, <em>habilidad</em>) es un conjunto de instrucciones reutilizables que le enseña a Gemini a hacer
+          un tipo de tarea siempre de la misma forma. Se crea en <strong>Personalizar → Habilidades</strong> y,
+          desde noviembre de 2026, reemplaza a los Gems en las cuentas personales.
+        </p>
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <span class="tarjeta__num">1</span>
+            <h3>Nombre</h3>
+            <p>En minúsculas y con guiones (<code>kebab-case</code>). Empieza con un verbo: <code>revisar-codigo</code>.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="tarjeta__num">2</span>
+            <h3>Descripción</h3>
+            <p>1 o 2 frases (máx. 1024 caracteres) que dicen qué hace y <em>cuándo usarla</em>. Gemini la lee para decidir si la activa.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="tarjeta__num">3</span>
+            <h3>Instrucciones + archivos</h3>
+            <p>El paso a paso, la plantilla de salida y los errores a evitar, en un archivo <code>SKILL.md</code> con referencias opcionales.</p>
+          </article>
+        </div>
+
+        <div class="comparacion">
+          <div>
+            <h3>Prompt normal</h3>
+            <ul>
+              <li>Hay que escribirlo cada vez.</li>
+              <li>La respuesta cambia de formato en cada chat.</li>
+              <li>Depende de que el usuario recuerde qué pedir.</li>
+            </ul>
+          </div>
+          <div class="comparacion__mejor">
+            <h3>Skill</h3>
+            <ul>
+              <li>Se escribe una vez y se activa sola cuando aplica.</li>
+              <li>Siempre responde con la misma plantilla.</li>
+              <li>Guarda el conocimiento del experto (checklist, severidades).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Cómo funciona ===== -->
+    <section class="seccion seccion--alt" id="como-funciona">
+      <div class="contenedor">
+        <h2>¿Cómo funciona por dentro?</h2>
+        <p class="seccion__intro">Gemini carga la Skill por partes para no gastar contexto de más (<em>progressive disclosure</em>).</p>
+        <ol class="pasos">
+          <li>
+            <span class="pasos__icono">🔎</span>
+            <h3>Lee nombre y descripción</h3>
+            <p>Con cada mensaje revisa si alguna Skill activa encaja con lo que pediste.</p>
+          </li>
+          <li>
+            <span class="pasos__icono">📋</span>
+            <h3>Carga las instrucciones</h3>
+            <p>Si pegaste código y pediste revisarlo, lee el <code>SKILL.md</code> completo.</p>
+          </li>
+          <li>
+            <span class="pasos__icono">📂</span>
+            <h3>Abre referencias si las necesita</h3>
+            <p>Por ejemplo, <code>checklist-por-lenguaje.md</code> para los errores típicos de Java o C.</p>
+          </li>
+        </ol>
+
+        <h3 class="subtitulo">Qué revisa nuestra Skill</h3>
+        <div class="checklist">
+          <span>🐞 Bugs y lógica</span>
+          <span>🛡️ Seguridad</span>
+          <span>⚡ Rendimiento</span>
+          <span>📖 Legibilidad</span>
+          <span>✅ Buenas prácticas</span>
+        </div>
+        <div class="severidades">
+          <p><span class="sev sev--critico">Crítico</span> El programa falla o tiene una vulnerabilidad explotable.</p>
+          <p><span class="sev sev--alto">Alto</span> Falla en casos borde frecuentes o hay riesgo de seguridad.</p>
+          <p><span class="sev sev--medio">Medio</span> Rendimiento o diseño que afectará al crecer.</p>
+          <p><span class="sev sev--bajo">Bajo</span> Estilo, nombres o legibilidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Demo ===== -->
+    <section class="seccion" id="demo">
+      <div class="contenedor">
+        <h2>Demo: sin Skill vs. con Skill</h2>
+        <p class="seccion__intro">Mismo prompt (<code>Revisa este codigo y dime que errores tiene</code>) y mismo código. Respuestas reales de Gemini.</p>
+
+        <div class="pestanas" role="tablist">
+          <button class="pestana activa" role="tab" aria-selected="true" data-tab="con">Con la Skill</button>
+          <button class="pestana" role="tab" aria-selected="false" data-tab="sin">Sin la Skill</button>
+        </div>
+
+        <div class="panel activo" id="panel-con" role="tabpanel">
+          <div class="reporte">
+            <div class="reporte__resumen">
+              <p><strong>Lenguaje:</strong> Python</p>
+              <p><strong>Calificación:</strong> 3/10</p>
+              <p><strong>Veredicto:</strong> ❌ Requiere cambios</p>
+            </div>
+            <div class="tabla-scroll">
+              <table>
+                <thead>
+                  <tr><th>#</th><th>Severidad</th><th>Línea</th><th>Problema</th><th>Cómo corregirlo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td><span class="sev sev--critico">Crítico</span></td><td>5</td><td>ZeroDivisionError si la lista está vacía.</td><td>Validar la lista antes de dividir.</td></tr>
+                  <tr><td>2</td><td><span class="sev sev--critico">Crítico</span></td><td>3</td><td>El for empieza en 1 y omite la primera nota.</td><td>Iterar sobre los elementos o usar <code>sum()</code>.</td></tr>
+                  <tr><td>3</td><td><span class="sev sev--bajo">Bajo</span></td><td>3-4</td><td>Sumar con índices no es idiomático en Python.</td><td>Usar <code>sum(notas)</code>.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="reporte__extra">+ código corregido, “Lo que está bien” y “Para aprender más”.</p>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-sin" role="tabpanel" hidden>
+          <div class="reporte reporte--texto">
+            <p>“El código tiene dos errores principales: uno lógico que afecta el resultado y otro de ejecución que detiene el programa.
+            <strong>Omite el primer elemento</strong>: el bucle empieza en el índice 1… <strong>División por cero</strong>: cuando pasas una lista vacía…”</p>
+            <p class="reporte__extra">Encuentra los errores, pero sin severidad, sin números de línea y con un formato distinto en cada respuesta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Resultados ===== -->
+    <section class="seccion seccion--alt" id="resultados">
+      <div class="contenedor">
+        <h2>Resultados de las pruebas</h2>
+        <p class="seccion__intro">
+          10 casos de prueba en Python, Java, JavaScript, C y SQL con 24 errores sembrados a propósito (uno de los casos no tiene errores, para medir falsos positivos).
+          Cada caso se probó en un chat nuevo de Gemini, primero sin la Skill y luego con ella.
+        </p>
+        <div class="metricas">
+          <div class="metrica"><p class="metrica__valor">91.7%</p><p>de errores detectados con la Skill (22/24)</p></div>
+          <div class="metrica metrica--base"><p class="metrica__valor">79.2%</p><p>sin la Skill (19/24)</p></div>
+          <div class="metrica"><p class="metrica__valor">100%</p><p>de respuestas con severidad y número de línea</p></div>
+          <div class="metrica metrica--base"><p class="metrica__valor">+6.4 s</p><p>tiempo promedio extra (35.5 s vs 29.1 s)</p></div>
+        </div>
+
+        <h3 class="subtitulo">Errores detectados por caso</h3>
+        <div class="grafica" id="grafica" aria-label="Gráfica de errores detectados por caso"></div>
+        <p class="leyenda"><span class="leyenda__con"></span> Con Skill <span class="leyenda__sin"></span> Sin Skill <span class="leyenda__esp"></span> Esperados</p>
+        <p class="nota">El análisis completo está en el cuaderno <code>cuaderno/analisis_pruebas_skill.ipynb</code> del repositorio.</p>
+      </div>
+    </section>
+
+    <!-- ===== Infografía y video ===== -->
+    <section class="seccion" id="recursos">
+      <div class="contenedor recursos">
+        <div>
+          <h2>Infografía</h2>
+          <p>Hecha con ChatGPT a partir de nuestra investigación y de los resultados reales.</p>
+          <a href="assets/infografia.png" target="_blank" rel="noopener">
+            <img src="assets/infografia.png" alt="Infografía: Skills en Gemini, tu revisor de código con IA" class="infografia" loading="lazy">
+          </a>
+        </div>
+        <div>
+          <h2>Video</h2>
+          <p>Video corto (24 s, 3 escenas con voz en off) producido con Google Flow.</p>
+          <video controls preload="metadata" class="video" poster="assets/video-portada.jpg">
+            <source src="assets/video.mp4" type="video/mp4">
+            Tu navegador no puede reproducir el video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Instalar ===== -->
+    <section class="seccion seccion--alt" id="instalar">
+      <div class="contenedor">
+        <h2>Instala la Skill en tu Gemini</h2>
+        <ol class="instalar">
+          <li>Descarga <a href="https://github.com/nicolasravem-design/skill-revisor-codigo-gemini/raw/main/skill/revisar-codigo.zip"><code>revisar-codigo.zip</code></a> del repositorio.</li>
+          <li>Entra a <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a> → <strong>Personalizar</strong> → <strong>Habilidades</strong>.</li>
+          <li>Haz clic en <strong>Crear → Subir</strong>, elige el <code>.zip</code> y luego <strong>Crear</strong>.</li>
+          <li>Abre un chat nuevo, pega tu código y escribe “revisa este código”. También puedes llamarla con <code>/revisar-codigo</code>.</li>
+        </ol>
+        <details class="skillmd">
+          <summary>Ver el inicio del <code>SKILL.md</code></summary>
+<pre><code>---
+name: revisar-codigo
+description: Revisa código fuente (Python, Java, JavaScript, C/C++ o SQL)
+  como un ingeniero de software senior, detecta bugs, vulnerabilidades,
+  problemas de rendimiento y malas prácticas, y entrega correcciones
+  explicadas con nivel de severidad. Usar cuando se pegue código y se
+  pida revisarlo, encontrar errores, mejorar su calidad, preparar un
+  pull request o entender por qué falla.
+---
+
+# Revisar código
+Actúa como un ingeniero de software senior que hace code review...</code></pre>
+          <button class="btn btn--chico" id="copiarDescripcion">Copiar descripción</button>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <p>Proyecto académico · Ingeniería Informática · Tercer semestre · 2026</p>
+      <p>Hecho por <span id="autor">Nicolas Muñoz Rave</span> · <a href="https://github.com/nicolasravem-design/skill-revisor-codigo-gemini" target="_blank" rel="noopener">Repositorio en GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
