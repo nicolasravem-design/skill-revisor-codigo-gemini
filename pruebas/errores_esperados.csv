@@ -1,0 +1,25 @@
+caso,archivo,lenguaje,error_id,linea,severidad_esperada,categoria,descripcion
+1,caso01_promedio.py,Python,1-A,3,Critico,Bug,El range empieza en 1 y se salta la primera nota
+1,caso01_promedio.py,Python,1-B,5,Alto,Bug,ZeroDivisionError cuando la lista esta vacia
+2,caso02_login.py,Python,2-A,6,Critico,Seguridad,Inyeccion SQL por concatenar usuario y clave en la consulta
+2,caso02_login.py,Python,2-B,6,Alto,Seguridad,La clave se guarda y compara en texto plano (sin hash)
+2,caso02_login.py,Python,2-C,4,Medio,Buenas practicas,La conexion a la base de datos nunca se cierra
+3,caso03_Busqueda.java,Java,3-A,3,Critico,Bug,i <= nombres.length produce ArrayIndexOutOfBoundsException
+3,caso03_Busqueda.java,Java,3-B,4,Alto,Bug,Compara String con == en vez de equals()
+4,caso04_carrito.js,JavaScript,4-A,13,Alto,Seguridad,innerHTML con texto externo permite XSS
+4,caso04_carrito.js,JavaScript,4-B,6,Bajo,Legibilidad,Numeros magicos 100000 y 0.9 sin constante con nombre
+4,caso04_carrito.js,JavaScript,4-C,2,Bajo,Buenas practicas,Uso de var en vez de let/const
+5,caso05_duplicados.py,Python,5-A,2,Medio,Rendimiento,Doble bucle O(n^2) cuando un set lo resuelve en O(n)
+6,caso06_nombre.c,C,6-A,6,Critico,Bug,malloc(strlen) no reserva espacio para el caracter nulo
+6,caso06_nombre.c,C,6-B,14,Critico,Seguridad,gets() permite desbordamiento del buffer de 10 bytes
+6,caso06_nombre.c,C,6-C,15,Medio,Buenas practicas,La memoria reservada nunca se libera con free (fuga de memoria)
+6,caso06_nombre.c,C,6-D,6,Bajo,Buenas practicas,No se verifica si malloc devolvio NULL
+8,caso08_estudiantes.sql,SQL,8-A,2,Critico,Bug,UPDATE sin WHERE reinicia el promedio de todos los estudiantes
+8,caso08_estudiantes.sql,SQL,8-B,5,Bajo,Buenas practicas,SELECT * trae columnas innecesarias
+9,caso09_Cuenta.java,Java,9-A,7,Alto,Bug,retirar no valida montos negativos ni saldo insuficiente
+9,caso09_Cuenta.java,Java,9-B,16,Medio,Buenas practicas,catch vacio que oculta errores
+9,caso09_Cuenta.java,Java,9-C,4,Medio,Buenas practicas,Usar double para dinero produce errores de redondeo
+9,caso09_Cuenta.java,Java,9-D,11,Bajo,Buenas practicas,El Scanner nunca se cierra
+10,caso10_usuario.js,JavaScript,10-A,2,Critico,Bug,Falta await en fetch y en json(): respuesta es una promesa
+10,caso10_usuario.js,JavaScript,10-B,2,Medio,Buenas practicas,No se valida respuesta.ok ni se manejan errores de red
+10,caso10_usuario.js,JavaScript,10-C,7,Bajo,Buenas practicas,La promesa no tiene .catch()

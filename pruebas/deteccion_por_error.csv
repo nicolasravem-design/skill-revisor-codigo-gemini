@@ -1,0 +1,25 @@
+error_id,caso,lenguaje,categoria,severidad_esperada,detectado_sin_skill,detectado_con_skill,severidad_dada_con_skill
+1-A,1,Python,Bug,Critico,1,1,Critico
+1-B,1,Python,Bug,Alto,1,1,Critico
+2-A,2,Python,Seguridad,Critico,1,1,Critico
+2-B,2,Python,Seguridad,Alto,1,0,
+2-C,2,Python,Buenas practicas,Medio,1,1,Medio
+3-A,3,Java,Bug,Critico,1,1,Critico
+3-B,3,Java,Bug,Alto,1,1,Critico
+4-A,4,JavaScript,Seguridad,Alto,1,1,Alto
+4-B,4,JavaScript,Legibilidad,Bajo,0,1,Bajo
+4-C,4,JavaScript,Buenas practicas,Bajo,1,1,Bajo
+5-A,5,Python,Rendimiento,Medio,1,1,Medio
+6-A,6,C,Bug,Critico,1,1,Critico
+6-B,6,C,Seguridad,Critico,1,1,Critico
+6-C,6,C,Buenas practicas,Medio,1,1,Medio
+6-D,6,C,Buenas practicas,Bajo,1,1,Medio
+8-A,8,SQL,Bug,Critico,1,1,Critico
+8-B,8,SQL,Buenas practicas,Bajo,0,1,Medio
+9-A,9,Java,Bug,Alto,1,1,Alto
+9-B,9,Java,Buenas practicas,Medio,1,1,Critico
+9-C,9,Java,Buenas practicas,Medio,0,0,
+9-D,9,Java,Buenas practicas,Bajo,0,1,Medio
+10-A,10,JavaScript,Bug,Critico,1,1,Critico
+10-B,10,JavaScript,Buenas practicas,Medio,1,1,Alto
+10-C,10,JavaScript,Buenas practicas,Bajo,0,1,Alto

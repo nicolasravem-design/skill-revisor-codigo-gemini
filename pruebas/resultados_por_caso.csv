@@ -1,0 +1,21 @@
+modo,caso,archivo,lenguaje,tiempo_s,errores_esperados,errores_detectados,falsos_positivos,hallazgos_reportados,usa_severidad,cita_lineas,codigo_corregido,sigue_plantilla,calificacion,veredicto
+sin_skill,1,caso01_promedio.py,Python,14.2,2,2,0,2,0,0,1,0,,
+sin_skill,2,caso02_login.py,Python,28.8,3,3,0,4,0,0,1,0,,
+sin_skill,3,caso03_Busqueda.java,Java,29.3,2,2,0,2,0,0,0,0,,
+sin_skill,4,caso04_carrito.js,JavaScript,30.6,3,2,0,4,0,0,1,0,,
+sin_skill,5,caso05_duplicados.py,Python,24.9,1,1,0,2,0,0,1,0,,
+sin_skill,6,caso06_nombre.c,C,59.2,4,4,0,4,0,0,1,0,,
+sin_skill,7,caso07_primo.py,Python,15.4,0,0,0,0,0,0,1,0,,
+sin_skill,8,caso08_estudiantes.sql,SQL,29.3,2,1,0,1,0,0,1,0,,
+sin_skill,9,caso09_Cuenta.java,Java,33.8,4,2,0,4,0,0,1,0,,
+sin_skill,10,caso10_usuario.js,JavaScript,25.1,3,2,0,2,0,0,1,0,,
+con_skill,1,caso01_promedio.py,Python,41.6,2,2,0,3,1,1,1,1,3,Requiere cambios
+con_skill,2,caso02_login.py,Python,49.5,3,2,0,4,1,1,1,1,3,Requiere cambios
+con_skill,3,caso03_Busqueda.java,Java,28.4,2,2,0,3,1,1,1,1,4,Requiere cambios
+con_skill,4,caso04_carrito.js,JavaScript,33.3,3,3,0,4,1,1,1,1,5,Requiere cambios
+con_skill,5,caso05_duplicados.py,Python,45.6,1,1,0,2,1,1,1,1,6,Aprobado con cambios
+con_skill,6,caso06_nombre.c,C,47.3,4,4,0,4,1,1,1,1,3,Requiere cambios
+con_skill,7,caso07_primo.py,Python,25.7,0,0,0,0,1,1,1,1,10,Aprobado
+con_skill,8,caso08_estudiantes.sql,SQL,24.2,2,2,0,2,1,1,1,1,3,Requiere cambios
+con_skill,9,caso09_Cuenta.java,Java,27.2,4,3,0,4,1,1,1,1,4,Requiere cambios
+con_skill,10,caso10_usuario.js,JavaScript,32.1,3,3,0,4,1,1,1,1,3,Requiere cambios
